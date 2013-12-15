@@ -29,39 +29,51 @@ public class Student extends Persoon
        setStudentNummer(studentnummer);
        setStudieRichting(studierichting);
     }
-    
+    /**
+     * Parameterloze constructor voor klasse Student
+     */
     public Student()
     {
        super(); 
     }
-    
+    /**
+     * Stel een nieuw studentnummer in voor objecten van Klasse Student  
+     * @param studentnummer
+     */
     public void setStudentNummer(String studentnummer)
     {
         this.studentnummer=studentnummer;
     }
-    
+    /**
+     * stel een nieuwe studierichting in voor objecten van Klasse Student
+     * @param studierichting
+     */
     public void setStudieRichting(String studierichting)
     {
         this.studierichting = studierichting;
     }
-    
+    /**
+     * retourneert het studentnummer van het object van klasse Student
+     * @return studentnummer
+     */
     public String getStudentNummer()
     {
         return studentnummer;
     }
-    
+    /**
+     * retourneert de studierichting van het object van klasse Student
+     * @return studierichting
+     */
     public String getStudieRichting()
     {
         return studierichting;
     }
-    
-    public void drukAf()
+    /**
+     * drukt de informatie van de superklasse persoon en de info specifiek voor Student af.
+     */
+    public String toString()
     {
-        /*System.out.println("Naam:              "+getAchterNaam()+", "+getVoorNaam());
-        System.out.println("BSN:               "+getBSN());
-        System.out.println("Geslacht:          "+getGeslacht());
-        System.out.println("GeboorteDatum:     "+getGeboorteDatum());*/
-        System.out.println("studentNummer:  "+getStudentNummer());
-        System.out.println("Studierichting: "+getStudieRichting());
+    	return super.toString()+"StudentNummer: "+getStudentNummer()+"\n"
+    			+ "StudieRichting:      "+getStudieRichting()+"\n";
     }
 }

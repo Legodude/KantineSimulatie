@@ -5,7 +5,7 @@ public class KantineSimulatie {
 	public static void main(String[] args)
 	{ 
 		KantineSimulatie sim =  new KantineSimulatie();
-		sim.simuleer(50);
+		sim.simuleer(50);	
 	} 
 
     // kantine

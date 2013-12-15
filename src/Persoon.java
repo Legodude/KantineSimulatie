@@ -43,7 +43,7 @@ public class Persoon
         setGeslacht(geslacht);
     }
     /**
-     *parameterloose constructor voor object van klasse persoom
+     *parameterloze constructor voor object van klasse persoon
      *setDatum wordt de datum gezet waarneer deze wordt gecreerd
      */
     public Persoon()
@@ -200,12 +200,12 @@ public class Persoon
     /**
      * drukt alle info over het object van de klasse persoon af in de console
      */
-    public void drukAf()
+    public String toString()
     {
-        System.out.println("Naam:          "+getAchterNaam()+", "+getVoorNaam());
-        System.out.println("BSN:           "+getBSN());
-        System.out.println("Geslacht:      "+getGeslacht());
-        System.out.println("GeboorteDatum: "+getGeboorteDatum());
+    	return "Naam:          "+getAchterNaam()+", "+getVoorNaam()+"\n"
+    			+"BSN:           "+getBSN()+"\n"
+    			+"Geslacht:      "+getGeslacht()+"\n"
+    			+"GeboorteDatum: "+getGeboorteDatum()+"\n";
     }
     /**
      * koppel een persoon aan een dienblad
@@ -233,6 +233,35 @@ public class Persoon
     public Dienblad getDienblad()
     {
         return dienblad;
+    }
+    
+    /**
+     * vergelijk een object met dit object
+     * @param  object
+     * @return  boolean
+     */
+    public boolean equals(Object object)
+    {
+        if(object == this) {
+            return true;
+        }
+        
+        if(!(object instanceof Persoon)) {
+            return false;
+        }
+
+        Persoon cobj = (Persoon) object;
+
+        return (
+            cobj.bsn==this.bsn &&
+            cobj.voornaam.equals(this.voornaam) &&
+            cobj.achternaam.equals(this.achternaam) &&
+            cobj.dag == this.dag &&
+            cobj.maand == this.maand &&
+            cobj.jaar == this.jaar &&
+            cobj.geslacht == this.geslacht &&
+            cobj.dienblad == this.dienblad
+        );
     }
 }
 

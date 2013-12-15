@@ -7,8 +7,8 @@
  */
 public class KantineMedewerker extends Persoon
 {
-    private String medewerkersnummer; //Employee nuber
-    private boolean kassaToegang; //Does this employee have access to the cash register?
+    private String medewerkersnummer;
+    private boolean kassaToegang;
 
     /**
      * Constructor.
@@ -29,39 +29,51 @@ public class KantineMedewerker extends Persoon
        setMedewerkersnummer(medewerkersnummer);
        setKassaToegang(kassaToegang);
     }
-    
+    /**
+     * parameterloze constructor voor klasse kantinemedewerker
+     */
     public KantineMedewerker()
     {
-       super(); //Using inheritance.
+       super();
     }
-    
+    /**
+     * stel een nieuw medewerkersnummer in
+     * @param medewerkersnummer
+     */
     public void setMedewerkersnummer(String medewerkersnummer)
     {
         this.medewerkersnummer=medewerkersnummer;
     }
-    
+    /**
+     * stel in of de medewerker kassatoegang heeft
+     * @param kassaToegang
+     */
     public void setKassaToegang(boolean kassaToegang)
     {
         this.kassaToegang = kassaToegang;
     }
-    
+    /**
+     * retourneert het medewerkersnummer van medewerker
+     * @return medewerkersnummer
+     */
     public String getMedewerkersnummer()
     {
         return medewerkersnummer;
     }
-    
+    /**
+     * retourneert of de medewerker kassatoegang heeft
+     * @return
+     */
     public boolean getKassaToegang()
     {
         return kassaToegang;
     }
-    
-    public void drukAf()
+    /**
+     * drukt alle info uit de superklasse af, en de info specifiek voor medewerker
+     */
+    public String toString()
     {
-        /*System.out.println("Naam:              "+getAchterNaam()+", "+getVoorNaam());
-        System.out.println("BSN:               "+getBSN());
-        System.out.println("Geslacht:          "+getGeslacht());
-        System.out.println("GeboorteDatum:     "+getGeboorteDatum());*/
-        System.out.println("MedewerkersNummer: "+getMedewerkersnummer());
-        System.out.println("Kassatoegang:      "+getKassaToegang());
+    	return super.toString()+"MedewerkersNummer: "+getMedewerkersnummer()+"\n"
+    			+ "Kassatoegang:      "+getKassaToegang()+"\n";
     }
 }

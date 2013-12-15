@@ -29,40 +29,51 @@ public class Docent extends Persoon
        setVierLetterCode(vierlettercode);
        setAfdeling(afdeling);
     }
-    
+    /**
+     * parameterloze constructor voor Docent
+     */
     public Docent()
     {
        super(); 
     }
-    
+    /**
+     * stel een nieuwe vierlettercode in voor docent
+     * @param vierlettercode
+     */
     public void setVierLetterCode(String vierlettercode)
     {
         this.vierlettercode=vierlettercode;
     }
-    
+    /**
+     * stel een nieuwe afdeling in voor docent
+     * @param afdeling
+     */
     public void setAfdeling(String afdeling)
     {
         this.afdeling = afdeling;
     }
-    
+    /**
+     * retourneert de vierlettercode van docent
+     * @return vierlettercode
+     */
     public String getVierLetterCode()
     {
         return vierlettercode;
     }
-    
+    /**
+     * retourneert de afdeling van docent
+     * @return docent
+     */
     public String getAfdeling()
     {
         return afdeling;
     }
-    
-    public void drukAf()
+    /**
+     * drukt alle info van de superklasse persoon af en de info specifiek voor docent
+     */
+    public String toString()
     {
-        /*System.out.println("Naam:              "+getAchterNaam()+", "+getVoorNaam());
-        System.out.println("BSN:               "+getBSN());
-        System.out.println("Geslacht:          "+getGeslacht());
-        System.out.println("GeboorteDatum:     "+getGeboorteDatum());*/
-        super.drukAf();
-        System.out.println("Afdeling:  "+getAfdeling());
-        System.out.println("Vierlettercode: "+getVierLetterCode());
+    	return super.toString()+"Afdeling: "+getAfdeling()+"\n"
+    			+ "vierlettercode:      "+getVierLetterCode()+"\n";
     }
 }
