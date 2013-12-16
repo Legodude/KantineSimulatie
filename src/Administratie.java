@@ -1,3 +1,8 @@
+/**
+ * Met deze panel worden berekeningen gedaan.
+ * @author Robert Stocker & Nick Klein
+ *
+ */
 public class Administratie {
     
     private static final int DAYS_IN_WEEK = 7;
