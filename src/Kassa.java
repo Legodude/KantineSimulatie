@@ -22,9 +22,10 @@ public class Kassa {
     * door een echte betaling door de persoon.
     * @param persoon die moet afrekenen
     */
-    public void rekenAf(Persoon persoon) {
+    public void rekenAf(Persoon persoon) throws TeWeinigGeldException{
         telOpBijGescandeArtikelen(getAantalArtikelen(persoon));
         telOpbijTotaalPrijs(getTotaalPrijs(persoon));
+		persoon.getBetaalWijze().betaal(totaalBedrag);
     }
     
     /**

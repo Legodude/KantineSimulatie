@@ -14,6 +14,7 @@ import java.util.Date;
 import java.text.*;
 public class Persoon
 {
+	private static int INITIEEL_SALDO = 750;
     // instance variables - replace the example below with your own
     private int bsn;
     private String voornaam;
@@ -23,7 +24,7 @@ public class Persoon
     private int jaar = 0;
     private char geslacht;
     private Dienblad dienblad;
-    
+    private Betaalwijze betaalwijze;
     /**
      * constructor voor objects van klasse persoon
      * @param bsn int Burgerservicenummer
@@ -41,6 +42,8 @@ public class Persoon
         this.achternaam = achternaam;
         setDatum(dag, maand, jaar);
         setGeslacht(geslacht);
+        this.betaalwijze = new Contant();
+        betaalwijze.setSaldo(INITIEEL_SALDO);
     }
     /**
      *parameterloze constructor voor object van klasse persoon
@@ -60,7 +63,8 @@ public class Persoon
       new SimpleDateFormat ("y");
       setDatum(Integer.parseInt(dag.format(date)),Integer.parseInt(maand.format(date)),Integer.parseInt(jaar.format(date)));
       setGeslacht('O');
-        
+      betaalwijze = new Contant();
+      betaalwijze.setSaldo(INITIEEL_SALDO);
     }
      
     /**
@@ -262,6 +266,14 @@ public class Persoon
             cobj.geslacht == this.geslacht &&
             cobj.dienblad == this.dienblad
         );
+    }
+    public Betaalwijze getBetaalWijze()
+    {
+    	return betaalwijze;
+    }
+    public void setBetaalWijze(Betaalwijze betaalwijze)
+    {
+    	this.betaalwijze = betaalwijze;
     }
 }
 

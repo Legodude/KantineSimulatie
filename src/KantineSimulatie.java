@@ -2,10 +2,19 @@ import java.util.*;
 
 public class KantineSimulatie {
 	
-	public static void main(String[] args)
-	{ 
+	public static void main(String[] args) throws TeWeinigGeldException
+	{
+		int dagen;
+		if(args.length==1)
+		{
+			dagen = Integer.parseInt(args[0]);
+		}
+		else
+		{	
+			dagen=50;
+		}
 		KantineSimulatie sim =  new KantineSimulatie();
-		sim.simuleer(50);	
+		sim.simuleer(dagen);	
 	} 
 
     // kantine
@@ -107,7 +116,7 @@ public class KantineSimulatie {
     * verloop van de kantine
     * @param dagen
     */
-    public void simuleer(int dagen) 
+    public void simuleer(int dagen) throws TeWeinigGeldException
     {
         for(int i=0;i<dagen;i++) 
         {
@@ -151,7 +160,7 @@ public class KantineSimulatie {
                     }
                 }
             }
-            kantine.verwerkRijVoorKassa();
+			kantine.verwerkRijVoorKassa();
             System.out.println("==============================");
             System.out.println("           dag "+(i+1));
             double geld = Math.round(kantine.getKassa().hoeveelheidGeldInKassa() * 100);
