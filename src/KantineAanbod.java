@@ -1,7 +1,15 @@
+/*
+ * 
+ */
 import java.util.*;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class KantineAanbod.
+ */
 public class KantineAanbod {
     // interne opslag voorraad
+    /** The aanbod. */
     private HashMap<String, ArrayList<Artikel>> aanbod;
    
     
@@ -10,6 +18,10 @@ public class KantineAanbod {
      * het tweede argument is een lijst met prijzen en het derde argument
      * is een lijst met hoeveelheden. Let op: de dimensies van de drie arrays
      * moeten wel gelijk zijn!
+     *
+     * @param artikelnaam the artikelnaam
+     * @param prijs the prijs
+     * @param hoeveelheid the hoeveelheid
      */
     public KantineAanbod(String[] artikelnaam, double[] prijs, int[] hoeveelheid) {
         aanbod=new HashMap<String, ArrayList<Artikel>>();
@@ -25,16 +37,22 @@ public class KantineAanbod {
     }
   
     /**
-     * Private methode om de lijst van artikelen te krijgen op basis van de    
+     * Private methode om de lijst van artikelen te krijgen op basis van de
      * naam van het artikel. Retourneert null als artikel niet bestaat.
+     *
+     * @param productnaam the productnaam
+     * @return the array list
      */
     private ArrayList<Artikel> getArrayList(String productnaam) {
          return aanbod.get(productnaam); 
     }
 
     /**
-     * Private methode om een Artikel van de stapel artikelen af te pakken. 
+     * Private methode om een Artikel van de stapel artikelen af te pakken.
      * Retourneert null als de stapel leeg is.
+     *
+     * @param stapel the stapel
+     * @return the artikel
      */
     private Artikel getArtikel(ArrayList<Artikel> stapel) {
         if (stapel==null) { 
@@ -62,6 +80,12 @@ public class KantineAanbod {
         return getArtikel(getArrayList(naam));
     }    
     
+    /**
+     * update de artikelvoorraad.
+     *
+     * @param naam the naam
+     * @param voorraad the voorraad
+     */
     public void updateArtikelVoorraad(String naam, int voorraad)
     {
         double prijs =  getArtikel(naam).getPrijs();
@@ -78,6 +102,12 @@ public class KantineAanbod {
         System.out.println("");
     }
     
+    /**
+     * vraag de artikelvoorraad op.
+     *
+     * @param naam the naam
+     * @return voorraad
+     */
     public int getArtikelVoorraad(String naam)
     {
             return getArrayList(naam).size();

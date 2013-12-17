@@ -1,27 +1,37 @@
+// TODO: Auto-generated Javadoc
 /**
  * info over Kassa zoals:
  * gescandeArtikelen
- * totaalBedrag
- * 
+ * totaalBedrag.
+ *
  * @author Nick klein en Robert Stocker
  * @version 1.0
- *
  */
 public class Kassa {
+    
+    /** The gescande artikelen. */
     private int gescandeArtikelen;
+    
+    /** The totaal bedrag. */
     private double totaalBedrag;
+    
     /**
-    * Constructor
-    */
+     * Constructor.
+     *
+     * @param kassarij the kassarij
+     */
     public Kassa(KassaRij kassarij) {
         resetKassa();
     }
+    
     /**
-    * vraag het aantal artikelen en de totaalprijs op.
-    * De implementatie wordt later vervangen
-    * door een echte betaling door de persoon.
-    * @param persoon die moet afrekenen
-    */
+     * vraag het aantal artikelen en de totaalprijs op.
+     * De implementatie wordt later vervangen
+     * door een echte betaling door de persoon.
+     *
+     * @param persoon die moet afrekenen
+     * @throws TeWeinigGeldException the te weinig geld exception
+     */
     public void rekenAf(Persoon persoon) throws TeWeinigGeldException{
         telOpBijGescandeArtikelen(getAantalArtikelen(persoon));
         double prijs=getTotaalPrijs(persoon);
@@ -49,8 +59,9 @@ public class Kassa {
     
     /**
      * update kassawaarde.
-     * @param totaalprijs van de nieuwe kassa
-     * */
+     *
+     * @param prijs the prijs
+     */
     public void telOpbijTotaalPrijs(double prijs)
     {
         totaalBedrag=prijs+totaalBedrag;
@@ -89,7 +100,9 @@ public class Kassa {
     
    /**
     * Methode om het aantal artikelen op dienblad dat bij de
-    * persoon hoort te tellen
+    * persoon hoort te tellen.
+    *
+    * @param persoon the persoon
     * @return Het aantal artikelen
     */
    public int getAantalArtikelen(Persoon persoon) 
@@ -103,7 +116,9 @@ public class Kassa {
    
    /**
     * Methode om de totaalprijs van de artikelen
-    * op dienblad dat bij de persoon hoort uit te rekenen
+    * op dienblad dat bij de persoon hoort uit te rekenen.
+    *
+    * @param persoon the persoon
     * @return De totaalprijs
     */
    public double getTotaalPrijs(Persoon persoon) 

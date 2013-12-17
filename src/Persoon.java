@@ -12,21 +12,47 @@
 
 import java.util.Date;
 import java.text.*;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class Persoon.
+ */
 public class Persoon
 {
+	
+	/** The initieel saldo. */
 	private static int INITIEEL_SALDO = 50;
     // instance variables - replace the example below with your own
+    /** The bsn. */
     private int bsn;
+    
+    /** The voornaam. */
     private String voornaam;
+    
+    /** The achternaam. */
     private String achternaam;
+    
+    /** The dag. */
     private int dag = 0;
+    
+    /** The maand. */
     private int maand = 0;
+    
+    /** The jaar. */
     private int jaar = 0;
+    
+    /** The geslacht. */
     private char geslacht;
+    
+    /** The dienblad. */
     private Dienblad dienblad;
+    
+    /** The betaalwijze. */
     private Betaalwijze betaalwijze;
+    
     /**
-     * constructor voor objects van klasse persoon
+     * constructor voor objects van klasse persoon.
+     *
      * @param bsn int Burgerservicenummer
      * @param voornaam String Voornaam van Persoon
      * @param achternaam String Achternaam van persoon
@@ -45,9 +71,10 @@ public class Persoon
         this.betaalwijze = new Contant();
         betaalwijze.setSaldo(INITIEEL_SALDO);
     }
+    
     /**
-     *parameterloze constructor voor object van klasse persoon
-     *setDatum wordt de datum gezet waarneer deze wordt gecreerd
+     * parameterloze constructor voor object van klasse persoon
+     * setDatum wordt de datum gezet waarneer deze wordt gecreerd.
      */
     public Persoon()
     {
@@ -68,10 +95,11 @@ public class Persoon
     }
      
     /**
-     * methode om geboortedatum van een object van klasse persoon te veranderen
+     * methode om geboortedatum van een object van klasse persoon te veranderen.
+     *
      * @param dag int geboortedag van persoon
      * @param maand int geboortemaand van persoon
-     * @param jaar int geboortemaand van persoon 
+     * @param jaar int geboortemaand van persoon
      */
     public void setDatum(int dag, int maand, int jaar)
     {
@@ -135,8 +163,10 @@ public class Persoon
        }
        else {System.out.println("[ERR] geen geldig jaar");}
     }
+    
     /**
-     * methode om het geslacht van een object van klasse Persoon te veranderen
+     * methode om het geslacht van een object van klasse Persoon te veranderen.
+     *
      * @param geslacht char nieuwe geslacht van object
      */
     public void setGeslacht(char geslacht){
@@ -148,8 +178,10 @@ public class Persoon
         }
         
     }
+    
     /**
-     * methode om het geslacht van een object van klasse persoon in stringvorm te retourneren
+     * methode om het geslacht van een object van klasse persoon in stringvorm te retourneren.
+     *
      * @return geslacht String het geslacht van het object van klasse persoon
      */
     public String getGeslacht(){
@@ -159,33 +191,41 @@ public class Persoon
             }
         return "Onbekend";
     }
+    
     /**
-     * methode om de voornaam van een object van klasse persoon te retourneren
+     * methode om de voornaam van een object van klasse persoon te retourneren.
+     *
      * @return voornaam String de voornaam van het object van klasse persoon
      */
     public String getVoorNaam()
     {
         return voornaam;
     }
+    
     /**
-     * methode om de achternaam van een object van klasse persoon te retourneren
+     * methode om de achternaam van een object van klasse persoon te retourneren.
+     *
      * @return achternaam String de achternaam van het object van klasse persoon
      */
     public String getAchterNaam()
     {
         return achternaam;
     }
+    
     /**
-     * methode om het burgerservicenummer van een object van klasse persoon te retourneren
+     * methode om het burgerservicenummer van een object van klasse persoon te retourneren.
+     *
      * @return bsn int het bsn van het object van klasse persoon
      */
     public int getBSN()
     {
         return bsn;
     }
+    
     /**
      * methode om de geboortedatum van een object van klasse persoon te retourneren
-     * in het formaat dag/maand/jaar 
+     * in het formaat dag/maand/jaar.
+     *
      * @return geboortedatum String de voornaam van het object van klasse persoon
      */
     public String getGeboorteDatum() 
@@ -201,8 +241,11 @@ public class Persoon
         }
         return temp;
     }
+    
     /**
-     * drukt alle info over het object van de klasse persoon af in de console
+     * drukt alle info over het object van de klasse persoon af in de console.
+     *
+     * @return the string
      */
     public String toString()
     {
@@ -211,8 +254,11 @@ public class Persoon
     			+"Geslacht:      "+getGeslacht()+"\n"
     			+"GeboorteDatum: "+getGeboorteDatum()+"\n";
     }
+    
     /**
-     * koppel een persoon aan een dienblad
+     * koppel een persoon aan een dienblad.
+     *
+     * @param dienblad the dienblad
      */
     public void pakDienblad(Dienblad dienblad) 
     {
@@ -221,8 +267,10 @@ public class Persoon
             this.dienblad=dienblad;
         }
     }
-    /** 
-     * heeft een persoon een dienblad?
+    
+    /**
+     * heeft een persoon een dienblad?.
+     *
      * @return boolean true voor wel, false voor niet
      */
     public boolean heeftDienblad()
@@ -234,14 +282,20 @@ public class Persoon
         return true;
     }
     
+    /**
+     * Gets the dienblad.
+     *
+     * @return the dienblad
+     */
     public Dienblad getDienblad()
     {
         return dienblad;
     }
     
     /**
-     * vergelijk een object met dit object
-     * @param  object
+     * vergelijk een object met dit object.
+     *
+     * @param object the object
      * @return  boolean
      */
     public boolean equals(Object object)
@@ -267,20 +321,46 @@ public class Persoon
             cobj.dienblad == this.dienblad
         );
     }
+    
+    /**
+     * vraag de betaalwijze op van persoon.
+     *
+     * @return betaalwijze
+     */
     public Betaalwijze getBetaalWijze()
     {
     	return betaalwijze;
     }
+    
+    /**
+     * stel de betaalwijze in.
+     *
+     * @param betaalwijze the new betaal wijze
+     */
     public void setBetaalWijze(Betaalwijze betaalwijze)
     {
     	this.betaalwijze = betaalwijze;
     }
+    
+    /**
+     * bezit de persoon een kortingskaart.
+     *
+     * @param persoon the persoon
+     * @return true/false
+     */
     public boolean bezitKortingsKaart(Persoon persoon)
     {
         if(persoon instanceof KantineMedewerker || persoon instanceof Docent) {
             return true;
         } else { return false; }
     }
+    
+    /**
+     * geef kortingspercentage.
+     *
+     * @param persoon the persoon
+     * @return kortingspercentage
+     */
     public double geefKortingsPercentage(Persoon persoon)
     {
         if(persoon instanceof Docent){

@@ -1,10 +1,23 @@
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class PersoonsVergelijker.
+ */
 public class PersoonsVergelijker 
 {
+	
+	/**
+	 * constructor, leeg omdat er niks geinitieerd hoeft te worden.
+	 */
 	public PersoonsVergelijker()
 	{
 	}
 	
+	/**
+	 * main methode.
+	 *
+	 * @param args the arguments
+	 */
 	public static void main(String[] args) 
 	{
 		Persoon[] personen = 

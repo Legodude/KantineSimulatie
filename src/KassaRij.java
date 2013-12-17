@@ -7,20 +7,28 @@
  *
  */
 import java.util.LinkedList;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class KassaRij.
+ */
 public class KassaRij {
+    
+    /** The personen. */
     private LinkedList<Persoon> personen;
     
     /**
-    * Constructor voor de objecten van klasse KassaRij
-    */
+     * Constructor voor de objecten van klasse KassaRij.
+     */
     public KassaRij() {
         personen = new LinkedList<Persoon>();
     }
     
     /**
-    * Persoon sluit achter in de rij aan
-    * @param persoon
-    */
+     * Persoon sluit achter in de rij aan.
+     *
+     * @param persoon the persoon
+     */
     public void sluitAchteraan(Persoon persoon) {
         personen.add(persoon);
     }

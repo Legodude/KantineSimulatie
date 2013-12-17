@@ -1,21 +1,25 @@
 
+// TODO: Auto-generated Javadoc
 /**
  * info over artikelen zoals:
  * naam
- * prijs
- * 
+ * prijs.
+ *
  * @author Nick klein en Robert Stocker
  * @version 1.0
- *
  */
 public class Artikel
 {
     // instance variables - replace the example below with your own
+    /** The Naam. */
     private String Naam;
+    
+    /** The Prijs. */
     private double Prijs;
 
     /**
-     * constructor voor artikel
+     * constructor voor artikel.
+     *
      * @param Naam String de naam van het artikel
      * @param Prijs int de prijs van het artikel per stuk
      */
@@ -29,7 +33,7 @@ public class Artikel
     }
     
     /**
-     *  parameterloze constructor voor artikel
+     * parameterloze constructor voor artikel.
      */
     public Artikel()
     {
@@ -41,8 +45,8 @@ public class Artikel
     }
 
     /**
-     * de naam van he object van de klasse artikel
-     * 
+     * de naam van he object van de klasse artikel.
+     *
      * @return     naam
      */
     public String getNaam()
@@ -51,8 +55,9 @@ public class Artikel
     }
     
     /**
-     * stel een nieuwe naam in voor het object van de klasse artikel
-     * @param naam String de nieuwe naam voor het artikel
+     * stel een nieuwe naam in voor het object van de klasse artikel.
+     *
+     * @param Naam the new naam
      */
     public void setNaam(String Naam)
     {
@@ -60,8 +65,9 @@ public class Artikel
     }    
     
     /**
-     * stel een nieuwe prijs in voor het object van de klasse artikel
-     * @param prijs int een nieuwe prijs voor het artikel
+     * stel een nieuwe prijs in voor het object van de klasse artikel.
+     *
+     * @param Prijs the new prijs
      */
     public void setPrijs(double Prijs)
     {
@@ -69,8 +75,8 @@ public class Artikel
     }
     
     /**
-     * de prijs van he object van de klasse artikel
-     * 
+     * de prijs van he object van de klasse artikel.
+     *
      * @return     prijs
      */
     public double getPrijs()
