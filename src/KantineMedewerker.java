@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class KantineMedewerker extends Persoon
+public class KantineMedewerker extends Persoon implements KortingskaartHouder
 {
     private String medewerkersnummer;
     private boolean kassaToegang;
@@ -75,5 +75,19 @@ public class KantineMedewerker extends Persoon
     {
     	return super.toString()+"MedewerkersNummer: "+getMedewerkersnummer()+"\n"
     			+ "Kassatoegang:      "+getKassaToegang()+"\n";
+    }
+    public double geefKortingsPercentage()
+    {
+        return 0.35;
+    }
+    
+    public boolean heeftMaximum()
+    {
+        return false;
+    }
+    
+    public double geefMaximum()
+    {
+        return 0.0;
     }
 }

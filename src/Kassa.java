@@ -24,8 +24,18 @@ public class Kassa {
     */
     public void rekenAf(Persoon persoon) throws TeWeinigGeldException{
         telOpBijGescandeArtikelen(getAantalArtikelen(persoon));
-        telOpbijTotaalPrijs(getTotaalPrijs(persoon));
-		persoon.getBetaalWijze().betaal(totaalBedrag);
+        double prijs=getTotaalPrijs(persoon);
+        if(persoon.bezitKortingsKaart(persoon))
+        { 
+            KortingskaartHouder houder = (KortingskaartHouder) persoon;
+            double korting = prijs * houder.geefKortingsPercentage();
+            if(houder.heeftMaximum() && korting > houder.geefMaximum()) {
+                korting = houder.geefMaximum();
+            }
+            prijs -= korting;
+        }
+		persoon.getBetaalWijze().betaal(prijs);
+		telOpbijTotaalPrijs(prijs);
     }
     
     /**

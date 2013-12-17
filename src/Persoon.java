@@ -14,7 +14,7 @@ import java.util.Date;
 import java.text.*;
 public class Persoon
 {
-	private static int INITIEEL_SALDO = 750;
+	private static int INITIEEL_SALDO = 50;
     // instance variables - replace the example below with your own
     private int bsn;
     private String voornaam;
@@ -274,6 +274,22 @@ public class Persoon
     public void setBetaalWijze(Betaalwijze betaalwijze)
     {
     	this.betaalwijze = betaalwijze;
+    }
+    public boolean bezitKortingsKaart(Persoon persoon)
+    {
+        if(persoon instanceof KantineMedewerker || persoon instanceof Docent) {
+            return true;
+        } else { return false; }
+    }
+    public double geefKortingsPercentage(Persoon persoon)
+    {
+        if(persoon instanceof Docent){
+            return 0.25;
+        }
+        else if(persoon instanceof KantineMedewerker) {
+            return 0.35;
+        }
+        return 0.00;
     }
 }
 
