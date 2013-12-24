@@ -26,13 +26,11 @@ public class KantineSimulatie {
     
     // artikelen
     /** The Constant artikelnamen. */
-    private static final String[] artikelnamen=
-    new String[] {"Koffie","Broodje hamburger", "Broodje kaas", "Melk"};
+    private static String[] artikelnamen;
     
     // prijzen
     /** The artikelprijzen. */
-    private static double[] artikelprijzen=
-    new double[]{1.51, 2.12, 1.64, 1.78};   
+    private static double[] artikelprijzen;
     
     // minimum en maximum aantal artikelen per soort
     /** The Constant MIN_ARTIKELEN_PER_SOORT. */
@@ -73,7 +71,7 @@ public class KantineSimulatie {
 	public static void main(String[] args) throws TeWeinigGeldException
 	{
 		int dagen;
-		if(args.length==1)
+		if(args.length>0)
 		{
 			dagen = Integer.parseInt(args[0]);
 		}
@@ -81,6 +79,8 @@ public class KantineSimulatie {
 		{	
 			dagen=50;
 		}
+		artikelnamen=new String[] {"Koffie","Broodje hamburger", "Broodje kaas", "Melk"};
+	    artikelprijzen=new double[]{1.51, 2.12, 1.64, 1.78};   
 		KantineSimulatie sim =  new KantineSimulatie();
 		sim.simuleer(dagen);	
 	} 
